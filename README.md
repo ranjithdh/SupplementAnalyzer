@@ -2,19 +2,37 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Supplement Analyzer
 
-This contains everything you need to run your app locally.
+An autonomous web scraping and content analysis agent that extracts structured data from URLs using Gemini AI. This tool is specifically optimized for extracting nutritional information and supplement facts.
 
-View your app in AI Studio: https://ai.studio/apps/drive/109DnZFFZTVAJwjWGHj73p-jcjYZkw7jH
+## Features
+
+- **Autonomous Extraction**: Powered by Gemini 3 Flash Preview with Google Search grounding.
+- **Visual Analysis**: Polished UI that mirrors physical Supplement Facts labels.
+- **Structured Data**: Extracts data into a clean JSON format for easy integration.
+- **Multimodal Support**: Can analyze product pages using both URLs and optional label images.
+- **Modern UI/UX**: Dark theme with professional brand colors and interactive analysis states.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js
 
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2. **Set the API Key:**
+   Create a `.env` file (or set in your environment):
+   ```
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+3. **Run the app:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Access the tool:**
+   Open your browser at `http://localhost:3000`.

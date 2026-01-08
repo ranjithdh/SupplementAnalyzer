@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AutoScrape Agent</title>
+    <title>Supplement analyzer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -15,10 +16,28 @@
               mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
+              brand: {
+                bg: 'var(--brand-bg)',
+                fg: 'var(--brand-fg)',
+                tertiary: 'var(--brand-tertiary)',
+                primary: 'var(--brand-primary)',
+                secondary: 'var(--brand-secondary)',
+                accent: 'var(--brand-accent)',
+                optimal: 'var(--brand-optimal)',
+                normal: 'var(--brand-normal)',
+                borderline: 'var(--brand-borderline)',
+                high: 'var(--brand-high)',
+                veryhigh: 'var(--brand-veryhigh)',
+                outline: 'var(--brand-outline)',
+                button: 'var(--brand-button)'
+              },
               gray: {
-                900: '#111827',
-                800: '#1f2937',
-                700: '#374151',
+                950: 'var(--brand-bg)',
+                900: 'var(--brand-fg)',
+                800: 'var(--brand-tertiary)',
+                700: 'var(--brand-button)',
+                400: 'var(--brand-secondary)',
+                200: 'var(--brand-primary)',
               }
             }
           },
@@ -26,24 +45,71 @@
       }
     </script>
     <style>
+      :root {
+        --brand-bg: #FFFFFF;
+        --brand-fg: #F4F4F5;
+        --brand-tertiary: #E4E4E7;
+        --brand-primary: #09090B;
+        --brand-secondary: #71717A;
+        --brand-accent: #2B7FFF;
+        --brand-optimal: #1F784C;
+        --brand-normal: #10B981;
+        --brand-borderline: #F59E0B;
+        --brand-high: #EF4444;
+        --brand-veryhigh: #BC1515;
+        --brand-outline: #8D8D79;
+        --brand-button: #E4E4E7;
+      }
+      
+      .dark {
+        --brand-bg: #09090B;
+        --brand-fg: #18181B;
+        --brand-tertiary: #25252A;
+        --brand-primary: #E4E4E7;
+        --brand-secondary: #A1A1AA;
+        --brand-accent: #2B7FFF;
+        --brand-optimal: #1F784C;
+        --brand-normal: #8DE28D;
+        --brand-borderline: #F4C764;
+        --brand-high: #F17968;
+        --brand-veryhigh: #BC1515;
+        --brand-outline: #8D8D79;
+        --brand-button: #35373B;
+      }
+
       body {
-        background-color: #0f1115;
-        color: #e5e7eb;
+        background-color: var(--brand-bg);
+        color: var(--brand-primary);
+        overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
       /* Custom scrollbar */
       ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #1f2937; 
+        background: var(--brand-bg); 
       }
       ::-webkit-scrollbar-thumb {
-        background: #4b5563; 
-        border-radius: 4px;
+        background: var(--brand-tertiary); 
+        border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #6b7280; 
+        background: var(--brand-accent); 
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      #root {
+        animation: fadeIn 0.8s ease-out forwards;
       }
     </style>
   <script type="importmap">
@@ -56,7 +122,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>

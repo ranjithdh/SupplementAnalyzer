@@ -60,4 +60,5 @@ export interface AnalysisState {
   status: 'idle' | 'analyzing' | 'complete' | 'error';
   data: ScrapedData | null;
   error: string | null;
+  logs?: string[];
 }

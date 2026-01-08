@@ -1,5 +1,5 @@
 {
-  "name": "AutoScrape Agent",
+  "name": "Supplement analyzer",
   "description": "An autonomous web scraping and content analysis agent that extracts structured data from URLs using Gemini AI.",
   "requestFramePermissions": []
 }
