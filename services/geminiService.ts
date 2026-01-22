@@ -137,7 +137,7 @@ export const analyzeUrl = async (url: string, imageUrl?: string): Promise<Scrape
     }
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-3-flash-preview", // Use a more stable model for now to rule out model-specific 500s
       contents: contents,
       config: {
         systemInstruction: systemInstruction,
